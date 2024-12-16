@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: The Case of the State-Bound Suds, Investigating America's Beer Bias
+title: The X0x0 team
 
 # Your name to show in the footer
 author: The X0x0 team
@@ -20,11 +20,11 @@ author: The X0x0 team
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  About the team: "aboutme"
+  The datasets:
+    - Beer Advocate Dataset: "https://beautifuljekyll.com"
+    - Rate beer Dataset: "https://www.markdowntutorial.com/"
+  Github: "https://github.com/HeleneZablit/website-x0x0"
 
 ################
 # --- Logo --- #
@@ -32,10 +32,10 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+#avatar: "/assets/img/avatar-icon.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: true
+#round-avatar: true
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
@@ -100,7 +100,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "x0x0-team.com"
 
 # Add the website title to the title of every page
 title-on-all-pages: true

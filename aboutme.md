@@ -1,16 +1,21 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About the team
+subtitle: What you need to know about us
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hi! Welcome to our website!
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+We are the 5 students who conducted the project:
 
-What else do you need?
+| Name                    | Email                                           |
+|-------------------------|-------------------------------------------------|
+| Enzo Gouliardon         | [enzo.gouliardon@epfl.ch](mailto:enzo.gouliardon@epfl.ch)      |
+| Alexandra Psaltis       | [alexandra.psaltis@epfl.ch](mailto:alexandra.psaltis@epfl.ch)  |
+| Iarantsoa Ramanoelina   | [iarantsoa.ramanoelina@epfl.ch](mailto:iarantsoa.ramanoelina@epfl.ch)|
+| Thomas van Spaendonk    | [thomas.vanspaendonk@epfl.ch](mailto:thomas.vanspaendonk@epfl.ch)|
+| Hélène Zablit           | [helene.zablit@epfl.ch](mailto:helene.zablit@epfl.ch)          |
 
-### My story
+Our project is part of the 2024 edition of the Applied Data Analysis ([CS-401](https://epfl-ada.github.io/teaching/fall2024/cs401/)) class at EPFL.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Check out our project on [GitHub](https://github.com/epfl-ada/ada-2024-project-x0x0).
