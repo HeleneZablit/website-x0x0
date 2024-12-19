@@ -21,9 +21,6 @@ author: The X0x0 team
 
 navbar-links:
   About the team: "aboutme"
-  The datasets:
-    - Beer Advocate Dataset: "https://beautifuljekyll.com"
-    - Rate beer Dataset: "https://www.markdowntutorial.com/"
   Github: "https://github.com/HeleneZablit/website-x0x0"
 
 ################
