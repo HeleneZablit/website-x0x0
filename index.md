@@ -227,54 +227,6 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
 
 # 5) Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias ?
 
-<div>
-  <style>
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      margin-top: 20px;
-    }
-    .control-container {
-      margin: 20px 0;
-      text-align: center;
-    }
-    #k-slider {
-      width: 300px;
-    }
-  </style>
-
-<!-- Dropdown Selector -->
-
-<div class="control-container">
-    <label for="k-dropdown">Select k:</label>
-    <select id="k-dropdown">
-      <option value="3">k = 3</option>
-      <option value="4">k = 4</option>
-      <option value="5">k = 5</option>
-      <option value="6">k = 6</option>
-      <option value="7">k = 7</option>
-      <option value="8">k = 8</option>
-      <option value="9">k = 9</option>
-      <option value="10">k = 10</option>
-    </select>
-  </div>
-
-<!-- Slider -->
-
-<div class="control-container">
-  <label for="k-dropdown">Choose k:</label>
-  <select id="k-dropdown">
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-  </select>
-</div>
 
 <div class="control-container">
   <label for="k-slider">Or use the slider:</label>
@@ -284,34 +236,26 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
 
 <!-- Frame to Display the HTML Files -->
 
-<iframe id="map-frame" src="/assets/img/question5/clustering_by_beer_attributes_k3.html"></iframe>
+<iframe 
+  id="map-frame" 
+  src="{{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k3.html" 
+  style="width: 100%; height: 600px; border: none;"
+></iframe>
 
 <script>
-  const dropdown = document.getElementById('k-dropdown');
   const slider = document.getElementById('k-slider');
   const sliderValue = document.getElementById('k-slider-value');
   const iframe = document.getElementById('map-frame');
 
   // Function to update the iframe src
   function updateIframe(k) {
-    iframe.src = `/assets/img/question5/clustering_by_beer_attributes_k${k}.html`; // Update src dynamically
+    iframe.src = `{{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k${k}.html`; // Update src dynamically
   }
-
-  // Event listener for dropdown
-  dropdown.addEventListener('change', (event) => {
-    const k = event.target.value;
-    slider.value = k; // Sync slider with dropdown
-    sliderValue.textContent = k; // Update slider label
-    updateIframe(k);
-  });
 
   // Event listener for slider
   slider.addEventListener('input', (event) => {
     const k = event.target.value;
     sliderValue.textContent = k; // Update slider label
-    dropdown.value = k; // Sync dropdown with slider
     updateIframe(k);
   });
 </script>
-
-</div>
