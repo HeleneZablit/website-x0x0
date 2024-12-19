@@ -7,24 +7,27 @@ cover-img: "/assets/img/background_test.png"
 # Introduction
 
 Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends, decompress with colleagues after work.
-From America’s prohibition era to the current globalisation of the beer market, the choice of beer in a bar has never been so varied. The choice one makes when ordering a beer has never highlighted internal bias as much as now. 
+From America’s prohibition era to the current globalisation of the beer market, the choice of beer in a bar has never been so varied. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
 
 <div style="display: flex; justify-content: center; gap: 10px;">
 
-  <!-- First image -->
-  <div>
+<!-- First image -->
+
+<div>
     <img src="{{ site.baseurl }}/assets/img/image_budweiser.jpg" alt="Image 1" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
 
-  <!-- Second image -->
-  <div>
+<!-- Second image -->
+
+<div>
     <img src="{{ site.baseurl }}/assets/img/we_want_beer.jpg" alt="Image 2" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
 
-  <!-- Third image -->
-  <div>
+<!-- Third image -->
+
+<div>
     <img src="{{ site.baseurl }}/assets/img/taste_the_high_country.jpg" alt="Image 3" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
@@ -35,13 +38,15 @@ The strong economic competition gives way to a cut-throat rivalry. Each brewery 
 
 <div style="display: flex; align-items: center;">
 
-  <!-- Image on the left -->
-  <div style="flex: 1; text-align: center;">
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/image4_intro.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
   </div>
 
-  <!-- Text on the right -->
-  <div style="flex: 2; padding-left: 20px;">
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
       It’s a claim we hear all the time: regions boasting about having the “best” beer. But what if there’s more to it than just national pride? What if the state you call home influences how you taste beer? What if your national pride is ingrained in your beer preferences? In this investigation, we dive deep into the beer preferences of Americans.
@@ -57,8 +62,9 @@ Our question at hand: Do people from different states have a bias for their own 
 
 <div style="display: flex; align-items: center;">
 
-  <!-- Text on the left -->
-  <div style="flex: 2; padding-right: 20px;">
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
       Why did we analyse US states you may ask. We had access to a large dataset from both the BeerAdvocate and RateBeer websites, but as we began our investigation, we found it more than sufficient to focus on the BeerAdvocate data. BeerAdvocate had a higher percentage of U.S.-based users compared to RateBeer, making it a more suitable dataset for our analysis, which was focused on a well-defined geographical region—the United States. <br>
@@ -67,7 +73,8 @@ Our question at hand: Do people from different states have a bias for their own 
   </div>
 
 <!-- Image on the right -->
-  <div style="flex: 1; text-align: center;">
+
+<div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/image_data_used.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
   </div>
 
@@ -81,20 +88,23 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 
 <div style="display: flex; align-items: center;">
 
-  <!-- Image on the left -->
-  <div style="flex: 1; text-align: center;">
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
   </div>
 
-  <!-- Text on the right -->
-  <div style="flex: 2; padding-left: 20px;">
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
       Not all states see eye to eye. Whether it's their neighbors or states on the opposite coast, preferences diverge in subtle but telling ways. So we asked ourselves, do neighbouring states rate their local beers similarly? <br>
       While we are interested in seeing how well states get along on beer taste, we start by dividing into "bubbles". A bubble is defined as a state and all its immediate neighbors. We're examining how the beer ratings within these bubbles might reveal patterns of connection (or lack thereof) between states.
 
-    </p>
-  </div>
+    `</p>`
+
+</div>
 
 </div>
 
@@ -111,13 +121,15 @@ To find our answer, we focus on Cohen's d value, which tells us whether the diff
 
 <div style="display: flex; align-items: center;">
 
-  <!-- Image on the left -->
-  <div style="flex: 1; text-align: center;">
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
   </div>
 
-  <!-- Text on the right -->
-  <div style="flex: 2; padding-left: 20px;">
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
       The results are varied: proximity doesn’t always equate to similarity in ratings. States like Maryland, nestled on the East Coast, show a striking alignment in their beer reviews with nearby states. But Louisiana, sitting comfortably in the heart of the South, reveals a surprising connection to California, far from its borders, rather than to neighboring Mississippi. On the other hand it is Mississippi, who ever agrees with them?
@@ -126,22 +138,24 @@ To find our answer, we focus on Cohen's d value, which tells us whether the diff
 
 </div>
 
-This being said, we have looked if there was statistical significance between the ratings between each bubble. We are not giving up nonetheless, the search must go on! 
+This being said, we have looked if there was statistical significance between the ratings between each bubble. We are not giving up nonetheless, the search must go on!
 
 # 2) Do we see significant differences between regions when comparing beer ratings?
 
 <div style="display: flex; align-items: center;">
 
-  <!-- Text on the left -->
-  <div style="flex: 2; padding-right: 20px;">
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
       Hmm. How interesting! To further deepen our investigation we extended our analysis to compare beer ratings between regions. Here we are interested in detecting significant differences in how users from a state rate their beers brewed in their own state compared to out of state beers. To do so, we looked at 2 different regions for comparison.
     </p>
   </div>
 
-  <!-- Image on the right -->
-  <div style="flex: 1; text-align: center;">
+<!-- Image on the right -->
+
+<div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/question2/image_fun_q2.jpg" alt="Description de l'image" style="max-width: 100%; height: auto;">
   </div>
 
@@ -161,6 +175,7 @@ We first examined whether users in each neighboring  bubble showed preferences f
 </div>
 
 ## Custom region analysis
+
 Next, we analyzed the regions we constructed earlier based on insights from the neighboring regions analysis of part 1 to see if we can see more trends. For these custom clusters, we compared in-region and out-region ratings using Cohen’s D. Again, all Cohen’s D values remained below 0.2, confirming that users did not rate beers from their own regions significantly higher.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
@@ -172,7 +187,7 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
     </iframe>
 </div>
 
-# 3) Looking at the state level, do we see more trends ? By doing a sentiment analysis do the text reviews reveal similar trends ? 
+# 3) Looking at the state level, do we see more trends ? By doing a sentiment analysis do the text reviews reveal similar trends ?
 
 ## Ratings analysis
 
@@ -229,8 +244,9 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
     }
   </style>
 
-  <!-- Dropdown Selector -->
-  <div class="control-container">
+<!-- Dropdown Selector -->
+
+<div class="control-container">
     <label for="k-dropdown">Select k:</label>
     <select id="k-dropdown">
       <option value="3">k = 3</option>
@@ -244,41 +260,58 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
     </select>
   </div>
 
-  <!-- Slider -->
-  <div class="control-container">
-    <label for="k-slider">Or use the slider:</label>
-    <input id="k-slider" type="range" min="3" max="10" value="3" step="1">
-    <span id="k-slider-value">3</span>
-  </div>
+<!-- Slider -->
+
+<div class="control-container">
+  <label for="k-dropdown">Choose k:</label>
+  <select id="k-dropdown">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+</div>
+
+<div class="control-container">
+  <label for="k-slider">Or use the slider:</label>
+  <input id="k-slider" type="range" min="3" max="10" value="3" step="1">
+  <span id="k-slider-value">3</span>
+</div>
 
 <!-- Frame to Display the HTML Files -->
-  <iframe id="map-frame" src="{{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k3.html"></iframe>
 
-  <script>
-    const dropdown = document.getElementById('k-dropdown');
-    const slider = document.getElementById('k-slider');
-    const sliderValue = document.getElementById('k-slider-value');
-    const iframe = document.getElementById('map-frame');
+<iframe id="map-frame" src="/assets/img/question5/clustering_by_beer_attributes_k3.html"></iframe>
 
-    // Function to update the iframe src
-    function updateIframe(k) {
-      iframe.src = {{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k${k}.html;
-    }
+<script>
+  const dropdown = document.getElementById('k-dropdown');
+  const slider = document.getElementById('k-slider');
+  const sliderValue = document.getElementById('k-slider-value');
+  const iframe = document.getElementById('map-frame');
 
-    // Event listener for dropdown
-    dropdown.addEventListener('change', (event) => {
-      const k = event.target.value;
-      slider.value = k;
-      sliderValue.textContent = k;
-      updateIframe(k);
-    });
+  // Function to update the iframe src
+  function updateIframe(k) {
+    iframe.src = `/assets/img/question5/clustering_by_beer_attributes_k${k}.html`; // Update src dynamically
+  }
 
-    // Event listener for slider
-    slider.addEventListener('input', (event) => {
-      const k = event.target.value;
-      sliderValue.textContent = k;
-      dropdown.value = k;
-      updateIframe(k);
-    });
-  </script>
+  // Event listener for dropdown
+  dropdown.addEventListener('change', (event) => {
+    const k = event.target.value;
+    slider.value = k; // Sync slider with dropdown
+    sliderValue.textContent = k; // Update slider label
+    updateIframe(k);
+  });
+
+  // Event listener for slider
+  slider.addEventListener('input', (event) => {
+    const k = event.target.value;
+    sliderValue.textContent = k; // Update slider label
+    dropdown.value = k; // Sync dropdown with slider
+    updateIframe(k);
+  });
+</script>
+
 </div>
