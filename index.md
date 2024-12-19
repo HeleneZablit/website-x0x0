@@ -68,7 +68,7 @@ Our question at hand: Do people from different states have a bias for their own 
 
   <!-- Image on the right -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/image_data_used.jpg" alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="assets/img/image_data_used.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
   </div>
 
 </div>
@@ -83,7 +83,7 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 
   <!-- Image on the left -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
   </div>
 
   <!-- Text on the right -->
@@ -113,7 +113,7 @@ To find our answer, we focus on Cohen's d value, which tells us whether the diff
 
   <!-- Image on the left -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
   </div>
 
   <!-- Text on the right -->
