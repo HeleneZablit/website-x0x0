@@ -80,7 +80,7 @@ Our question at hand: Do people from different states have a bias for their own 
 
 </div>
 
-![Mon image descriptive]({{ site.baseurl }}/assets/img/local_vs_non_local_reviews_by_country.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question0/local_vs_non_local_reviews_by_country.png)
 
 Having more data at our disposal allowed us to minimize the impact of anomalies or outliers. Since our goal was to capture state-level trends in beer reviews, the increased number of reviews enabled us to shift focus away from individual reviewer opinions and instead analyze the broader geographical patterns.
 
