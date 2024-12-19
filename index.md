@@ -11,21 +11,21 @@ From America’s prohibition era to the current globalisation of the beer market
 
 <div style="display: flex; justify-content: center; gap: 10px;">
 
-  <!-- Première image -->
+  <!-- First image -->
   <div>
-    <img src="assets/img/image_budweiser.jpg" alt="Image 1" style="width: 300px; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/image_budweiser.jpg" alt="Image 1" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
 
-  <!-- Deuxième image -->
+  <!-- Second image -->
   <div>
-    <img src="assets/img/we_want_beer.jpg" alt="Image 2" style="width: 300px; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/we_want_beer.jpg" alt="Image 2" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
 
-  <!-- Troisième image -->
+  <!-- Third image -->
   <div>
-    <img src="assets/img/taste_the_high_country.jpg" alt="Image 3" style="width: 300px; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/taste_the_high_country.jpg" alt="Image 3" style="width: 300px; height: auto;">
     <p style="text-align: center;"></p>
   </div>
 
@@ -37,7 +37,7 @@ The strong economic competition gives way to a cut-throat rivalry. Each brewery 
 
   <!-- Image on the left -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/image4_intro.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/image4_intro.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
   </div>
 
   <!-- Text on the right -->
@@ -66,14 +66,14 @@ Our question at hand: Do people from different states have a bias for their own 
     </p>
   </div>
 
-  <!-- Image on the right -->
+<!-- Image on the right -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/image_data_used.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
+    <img src="{{ site.baseurl }}/assets/img/image_data_used.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
   </div>
 
 </div>
 
-![Mon image descriptive](/assets/img/local_vs_non_local_reviews_by_country.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/local_vs_non_local_reviews_by_country.png)
 
 Having more data at our disposal allowed us to minimize the impact of anomalies or outliers. Since our goal was to capture state-level trends in beer reviews, the increased number of reviews enabled us to shift focus away from individual reviewer opinions and instead analyze the broader geographical patterns.
 
@@ -83,7 +83,7 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 
   <!-- Image on the left -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
+    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
   </div>
 
   <!-- Text on the right -->
@@ -101,7 +101,7 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 To find our answer, we focus on Cohen's d value, which tells us whether the difference in rating tendencies are statistically significant or not. Let us therefore regroup the states that align in their ratings.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <iframe src="/assets/img/question1/custom_region.html" 
+    <iframe src="{{ site.baseurl }}/assets/img/question1/custom_region.html" 
             width="2000" 
             height="700" 
             style="border: none;" 
@@ -113,7 +113,7 @@ To find our answer, we focus on Cohen's d value, which tells us whether the diff
 
   <!-- Image on the left -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
+    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
   </div>
 
   <!-- Text on the right -->
@@ -142,17 +142,17 @@ This being said, we have looked if there was statistical significance between th
 
   <!-- Image on the right -->
   <div style="flex: 1; text-align: center;">
-    <img src="assets/img/question2/image_fun_q2.jpg" alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/question2/image_fun_q2.jpg" alt="Description de l'image" style="max-width: 100%; height: auto;">
   </div>
 
 </div>
 
-## Neighboring bubbles analysis 
+## Neighboring bubbles analysis
 
 We first examined whether users in each neighboring  bubble showed preferences for beers in their bubble compared to outside. However, all Cohen’s D were below 0.2, meaning there was no statistically significant difference between the ratings.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <iframe src="/assets/img/question2/neighbours_regions_cohend.html" 
+    <iframe src="{{ site.baseurl }}/assets/img/question2/neighbours_regions_cohend.html" 
             width="800" 
             height="500" 
             style="border: none;" 
@@ -164,7 +164,7 @@ We first examined whether users in each neighboring  bubble showed preferences f
 Next, we analyzed the regions we constructed earlier based on insights from the neighboring regions analysis of part 1 to see if we can see more trends. For these custom clusters, we compared in-region and out-region ratings using Cohen’s D. Again, all Cohen’s D values remained below 0.2, confirming that users did not rate beers from their own regions significantly higher.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <iframe src="/assets/img/question2/regional_on_question1.html" 
+    <iframe src="{{ site.baseurl }}/assets/img/question2/regional_on_question1.html" 
             width="800" 
             height="500" 
             style="border: none;" 
@@ -176,24 +176,24 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
 
 ## Ratings analysis
 
-![Mon image descriptive](/assets/img/question3/cohensd_in_state_vs_out_state.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cohensd_in_state_vs_out_state.png)
 
-![Mon image descriptive](/assets/img/question3/ratings_distributions_average_ratings_high_cohensd.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/ratings_distributions_average_ratings_high_cohensd.png)
 
 ## Sentiment analysis
 
-![Mon image descriptive](/assets/img/question3/sentiment_analysis_reviews_local_vs_nonlocal.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/sentiment_analysis_reviews_local_vs_nonlocal.png)
 
-![Mon image descriptive](/assets/img/question3/cramers_v_result.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cramers_v_result.png)
 
 # 4) Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings?
 
-![Mon image descriptive](/assets/img/question4/top_beer_style_high_norm_weight_per_state.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/top_beer_style_high_norm_weight_per_state.png)
 
-![Mon image descriptive](/assets/img/question4/percentage_share_beer_styles_by_users.png)
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/percentage_share_beer_styles_by_users.png)
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <iframe src="/assets/img/question4/dbscan_clustering_on_umap.html" 
+    <iframe src="{{ site.baseurl }}/assets/img/question4/dbscan_clustering_on_umap.html" 
             width="1000" 
             height="1200" 
             style="border: none;" 
@@ -202,7 +202,7 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
 </div>
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
-    <iframe src="/assets/img/question4/usa_state_cluster_based_on_dbscan.html" 
+    <iframe src="{{ site.baseurl }}/assets/img/question4/usa_state_cluster_based_on_dbscan.html" 
             width="1000" 
             height="1200" 
             style="border: none;" 
@@ -251,8 +251,8 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
     <span id="k-slider-value">3</span>
   </div>
 
-  <!-- Frame to Display the HTML Files -->
-  <iframe id="map-frame" src="assets/img/question5/clustering_by_beer_attributes_k3.html"></iframe>
+<!-- Frame to Display the HTML Files -->
+  <iframe id="map-frame" src="{{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k3.html"></iframe>
 
   <script>
     const dropdown = document.getElementById('k-dropdown');
@@ -262,7 +262,7 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
 
     // Function to update the iframe src
     function updateIframe(k) {
-      iframe.src = `assets/img/question5/clustering_by_beer_attributes_k${k}.html`;
+      iframe.src = {{ site.baseurl }}/assets/img/question5/clustering_by_beer_attributes_k${k}.html;
     }
 
     // Event listener for dropdown
