@@ -249,7 +249,7 @@ Looking at the percentage of positive/negative/neutral sentences for each state,
 
 We performed a chi2 test followed by a cramer’s V test (equivalent to cohen’s D but for categorical values), but as we can see, although the p-values are small for the chi2-test (likely due to large population size), the cramer’s V tells us that the effect size is negligible, thus there is no significant difference between the populations of locals and non locals! Maybe we can still find something if we analyze the specific scores of our sentences?
 
-image a rajouter!!!
+![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cohens_D_across_all_states.png)
 
 Alas, the trail has gone cold. The effect size is quite small, thus there are again no significant differences between local and nonlocal reviews for a state.
 In conclusion, much to our surprise, and contrary to analysis just based on average ratings, where we did find results, it seems that just analyzing the text reviews reveals no bias when it comes to local and nonlocal beers. A possible explanation for this is that people who leave text reviews are more likely to have a positive experience, so we’re sampling reviews that are mostly positive (indeed they are looking at the stacked barchart), giving us no meaningful difference for locals and on locals, as people who've had an average or negative experience won’t bother leaving a text review. 
