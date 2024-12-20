@@ -40,7 +40,7 @@ The strong economic competition gives way to a cut-throat rivalry. Each brewery 
 <!-- Image on the left -->
 
 <div style="flex: 1; text-align: center;">
-    <img src="{{ site.baseurl }}/assets/img/image4_intro.jpg"  alt="Description de l'image" style="max-width: 100%; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/image4_intro.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
   </div>
 
 <!-- Text on the right -->
@@ -89,7 +89,7 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 <!-- Image on the left -->
 
 <div style="flex: 1; text-align: center;">
-    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
+    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_q1.jpg"  alt="Description de l'image" style="max-width: 300px; height: 300px;">
   </div>
 
 <!-- Text on the right -->
@@ -123,7 +123,7 @@ To find our answer, we are using statistical significance tests (Cohen’s D), a
 <!-- Image on the left -->
 
 <div style="flex: 1; text-align: center;">
-    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
+    <img src="{{ site.baseurl }}/assets/img/question1/image_fun_2_q1.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
   </div>
 
 <!-- Text on the right -->
@@ -188,7 +188,7 @@ The graph below is showing us differences in beer ratings between bubbles. If we
 <!-- Image on the right -->
 
 <div style="flex: 1; text-align: center;">
-    <img src="{{ site.baseurl }}/assets/img/question2/image_fun_q2_2.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
+    <img src="{{ site.baseurl }}/assets/img/question2/image_fun_q2_2.jpg" alt="Description de l'image" style="max-width: 100%; height: 200px;">
   </div>
 
 </div>
@@ -247,9 +247,17 @@ Looking at the percentage of positive/negative/neutral sentences for each state,
 
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cramers_v_result.png)
 
-We performed a chi2 test followed by a cramer’s V test (equivalent to cohen’s D but for categorical values), but as we can see, although the p-values are small for the chi2-test (likely due to large population size), the cramer’s V tells us that the effect size is negligible, thus there is no significant difference between the populations of locals and non locals! Maybe we can still find something if wwe analyze the specific scores of our sentences?
+We performed a chi2 test followed by a cramer’s V test (equivalent to cohen’s D but for categorical values), but as we can see, although the p-values are small for the chi2-test (likely due to large population size), the cramer’s V tells us that the effect size is negligible, thus there is no significant difference between the populations of locals and non locals! Maybe we can still find something if we analyze the specific scores of our sentences?
 
-# 4) Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings?
+image a rajouter!!!
+
+Alas, the trail has gone cold. The effect size is quite small, thus there are again no significant differences between local and nonlocal reviews for a state.
+In conclusion, much to our surprise, and contrary to analysis just based on average ratings, where we did find results, it seems that just analyzing the text reviews reveals no bias when it comes to local and nonlocal beers. A possible explanation for this is that people who leave text reviews are more likely to have a positive experience, so we’re sampling reviews that are mostly positive (indeed they are looking at the stacked barchart), giving us no meaningful difference for locals and on locals, as people who've had an average or negative experience won’t bother leaving a text review. 
+Additionally, people who leave reviews actually have to think about what they're writing, they’re more thoughtful, so potentially less biased, compared to people who just leave a quick rating without thinking about it much.
+
+Let's expand our search a little and investigate the other factors at play, notable beer styles, could they lead us to a satisfying conclusion?
+
+# A style specific bias?
 
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/top_beer_style_high_norm_weight_per_state.png)
 
@@ -264,8 +272,6 @@ We performed a chi2 test followed by a cramer’s V test (equivalent to cohen’
     </iframe>
 </div>
 
-Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
-
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question4/usa_state_cluster_based_on_dbscan.html" 
             width="1000" 
@@ -274,8 +280,6 @@ Beer, the most common alcoholic beverage. Grabbing a beer has become one of the 
             title="Interactive Plot: Regional Analysis">
     </iframe>
 </div>
-
-Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
 
 # 5) Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias ?
 
@@ -311,5 +315,3 @@ Beer, the most common alcoholic beverage. Grabbing a beer has become one of the 
     updateIframe(k);
   });
 </script>
-
-Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
