@@ -33,7 +33,7 @@ Beer, the most common alcoholic beverage. Grabbing a beer has become one of the 
 
 </div>
 
-The strong economic competition gives way to a cut-throat rivalry. Each brewery wants to sell more, be the best, especially if they sell beer in the same location. Can beers that come from far away compete with locals beers that are firmly anchored in their region?
+The strong economic competition gives way to a cut-throat rivalry. Each brewery wants to sell more and be the best, especially if they sell beer in the same location. Can beers that come from far away compete with locals beers that are firmly anchored in their region?
 
 <div style="display: flex; align-items: center;">
 
@@ -439,7 +439,7 @@ Then as we’ve done before we can use these clusters to build a map of the US, 
   });
 </script>
 
-The clustering showed us the preferences people have are geographically biased: those who like the same things, often, are neighbours!  Additionally we can see that there are certain regions that always belong to the same cluster. Namely: Maine, New York, Pennsylvania and Virginia often belong to the same cluster. South Carolina, Georgia Mississippi, Tennessee, Arkansas and Arizona group together. Minnesota, Wisconsin, Illinois, Iowa and Michigan also cluster together. And finally, Montana, North and South Dakota, Wyoming and Idaho often belong to the same cluster.
+The clustering showed us that people's preferences are geographically biased: those who have the same taste, often, are neighbours!  Additionally we can see that there are certain regions that always belong to the same cluster. Namely: Maine, New York, Pennsylvania and Virginia often belong to the same cluster. South Carolina, Georgia Mississippi, Tennessee, Arkansas and Arizona group together. Minnesota, Wisconsin, Illinois, Iowa and Michigan also cluster together. And finally, Montana, North and South Dakota, Wyoming and Idaho often belong to the same cluster.
 
 From this modest clustering, we can say that there are 4 regions that are recurrent in this case:<br>
 1) New England and the Mid-Atlantic <br>
