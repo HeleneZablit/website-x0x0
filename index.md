@@ -107,12 +107,12 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 
 </div>
 
-To find our answer, we’re using statistical significance tests (Cohen’s D), a powerful tool to analyze differences between distributions. More specifically, we are looking at the differences in the distributions of average ratings of beers for the states in a bubble. By grouping many bubbles together based on their statistical similarities, we can put states that have similar beer preferences together to customize new regions and draw a nice map based on these groups.
+To find our answer, we are using statistical significance tests (Cohen’s D), a powerful tool to analyze differences between distributions. More specifically, we are looking at the difference of average beer ratings, between the states of a bubble. By grouping multiple bubbles with statistical similarities, we can obtain broader, customised regions based on beer preferences. This aggregation of bubbles, as in a beer glass, can be called foam: bubbles with similar properties aggregating at the top of the glass. You can take a look at the foam on the graph just below. 
 
-<div style="display: flex; justify-content: center; margin: 20px 0;">
+<div style="display: flex; justify-content: center; margin: 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question1/custom_region.html" 
             width="2000" 
-            height="700" 
+            height="600" 
             style="border: none;" 
             title="Interactive Plot: Regional Analysis">
     </iframe>
@@ -137,7 +137,7 @@ To find our answer, we’re using statistical significance tests (Cohen’s D), 
 
 </div>
 
-# Bubble vs. Bubble, Customized Region vs Customized Region, are they really different?
+# Bubble vs bubble, foam vs foam: are they really different?
 
 <div style="display: flex; align-items: center;">
 
@@ -146,7 +146,7 @@ To find our answer, we’re using statistical significance tests (Cohen’s D), 
 <div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
-      In the same way draft beer pours into our glasses on a Friday night, let’s pour ourselves into this investigation. So far we’ve compared states within a bubble to each other and were able to customize new regions, but to deepen our investigation we can look at both how bubbles and our customized regions themselves compare to the others. Maybe by taking a bigger picture view of things, we can find some interesting results. Should this be true, it would be a small breakthrough, a step towards identifying regional bias.
+      In the same way draft beer pours into our glasses on a Friday night, let’s pour ourselves into this investigation. So far we have compared states within a bubble to each other and were able to customize new regions (foam), but to deepen our investigation we can look at both how bubbles and our foams compare to the others. Maybe by taking a bigger picture view of things, we can find some interesting results. Should this be true, it would be a small breakthrough, a step towards identifying regional bias. 
     </p>
   </div>
 
@@ -171,7 +171,7 @@ The graph below is showing us differences in beer ratings between bubbles. If we
     </iframe>
 </div>
 
-## Customized Region Analysis
+## Foam Analysis
 
 <div style="display: flex; align-items: center;">
 
@@ -180,7 +180,7 @@ The graph below is showing us differences in beer ratings between bubbles. If we
 <div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
-      Now let’s look at our customized regions and see if by comparing them we see any differences. Since they are grouped based on preference, different groups might be quite different in terms of taste. <br>
+      Now let’s look at our foam, and see if by comparing them we see any differences. Since they are grouped based on preference, different groups might be quite different in terms of taste. <br>
       Will they show us a bias in the ratings or is everyone just a fair player in the beer rating business?
     </p>
   </div>
@@ -204,19 +204,50 @@ The graph below is showing us differences in beer ratings between bubbles. If we
 
 Well… The latter appears to have prevailed once again. No group has shown a significant bias towards their own group.  Does this mean that all users have the same tendencies when it comes to reviewing beers from different states? We must dig deeper.
 
+Since we don’t see much on a big scale, let's try a more granular approach and analyse differences once again on a state-by-state level, but this time across the whole country instead of just within bubbles and foams. 
+
 # Zooming In: State-Level Bias
+
+<div style="display: flex; align-items: center;">
+
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question3/image_fun_q3.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
+  </div>
+
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
+    <h2></h2>
+    <p>
+      Let us roll up our sleeves, take a beer in each hand, and find new leads in this investigation! We want to compare each state with the rest of the United States, our goal being to find states that really love their local beer. If certain states are extremely biased towards their own beers, we will be a step further in isolating geographical bias!
+    </p>
+  </div>
+
+</div>
 
 ## Ratings analysis
 
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cohensd_in_state_vs_out_state.png)
 
+Aha! This finer lens finally reveals a lead, indeed we can see some differences between states! There are multiple states with significant Cohen's D. This means that states do have preferences in their taste of beer.
+
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/ratings_distributions_average_ratings_high_cohensd.png)
 
-## Sentiment analysis
+Looking at the actual difference in average rating, in red we can see that most states do indeed have a bias in their beers compared to when rating out of state beers. For more than 50% of the states, this bias is positively weighted towards their own beers. However in a turn of events there are 17 states where there is actually a preference for out of state beers. We have to reap the fruits our lead gave us, and dig deeper into what drives these differences. What is the secret behind Missouri beer, which has its inhabitants in a chokehold?
+
+## Sentiment analysis : A Textual Clue?
+
+We know that there are states that have significant differences in the way they rate beers, when we look at the average rating. So, let's follow the trail and try to expand what we compare states on and look at textual data. Indeed we have vast amounts of textual data to analyze, with over 8 million different reviews for beer!  We can run this through a NLP pipeline, and perform a sentiment analysis on this data. With this we can say that an individual sentence is ‘positive’, ‘negative’ or ‘neutral’, with a score for how positive/negative it is. Ideally, we would like to see that the sentiment bias revealed by the written text reviews align with the state specific biases uncovered using the ratings distributions.
 
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/sentiment_analysis_reviews_local_vs_nonlocal.png)
 
+Looking at the percentage of positive/negative/neutral sentences for each state, comparing local and non local reviews, the distributions between positive, neutral and negative reviews are pretty similar between all states. This is surprising, as we expected differences based on our earlier analysis of the ratings. Let's try some statistical tests to see if there are significant differences.
+
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cramers_v_result.png)
+
+We performed a chi2 test followed by a cramer’s V test (equivalent to cohen’s D but for categorical values), but as we can see, although the p-values are small for the chi2-test (likely due to large population size), the cramer’s V tells us that the effect size is negligible, thus there is no significant difference between the populations of locals and non locals! Maybe we can still find something if wwe analyze the specific scores of our sentences?
 
 # 4) Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings?
 
@@ -227,20 +258,24 @@ Well… The latter appears to have prevailed once again. No group has shown a si
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question4/dbscan_clustering_on_umap.html" 
             width="1000" 
-            height="1200" 
+            height="600" 
             style="border: none;" 
             title="Interactive Plot: Regional Analysis">
     </iframe>
 </div>
 
+Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
+
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question4/usa_state_cluster_based_on_dbscan.html" 
             width="1000" 
-            height="1200" 
+            height="600" 
             style="border: none;" 
             title="Interactive Plot: Regional Analysis">
     </iframe>
 </div>
+
+Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
 
 # 5) Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias ?
 
@@ -276,3 +311,5 @@ Well… The latter appears to have prevailed once again. No group has shown a si
     updateIframe(k);
   });
 </script>
+
+Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
