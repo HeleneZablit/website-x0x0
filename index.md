@@ -4,10 +4,9 @@ title: "Exploring Geographical Biais in Beer Taste in the US"
 subtitle: "Is Your State Swaying Your Sip?"
 cover-img: "/assets/img/background_test.png"
 ---
-# Introduction
 
-Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends, decompress with colleagues after work.
-From America’s prohibition era to the current globalisation of the beer market, the choice of beer in a bar has never been so varied. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
+Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends or decompress with colleagues after work. Beer is popular worldwide, even in the far away lands of the United States of America, where the end of the Prohibition opened the floodgates for American breweries to expand, and where globalization has since diversified offerings even further. The choice one makes when ordering a beer has never highlighted internal bias as much as now.
+
 
 <div style="display: flex; justify-content: center; gap: 10px;">
 
@@ -34,7 +33,7 @@ From America’s prohibition era to the current globalisation of the beer market
 
 </div>
 
-The strong economic competition gives way to a cut-throat rivalry. Each brewery wants to sell more, be the best, especially if they sell beer in the same location. Can beers that come from far away compete with the regional preference people might have?
+The strong economic competition gives way to a cut-throat rivalry. Each brewery wants to sell more, be the best, especially if they sell beer in the same location. Can beers that come from far away compete with locals beers that are firmly anchored in their region?
 
 <div style="display: flex; align-items: center;">
 
@@ -55,10 +54,9 @@ The strong economic competition gives way to a cut-throat rivalry. Each brewery 
 
 </div>
 
-This leads us to our research questions:
-Our question at hand: Do people from different states have a bias for their own beers? To crack the case, we’ll begin by examining the geography of beer preferences through the lens of U.S. states. Inspired by the idea that people from certain regions of the world share similar food tastes, we’ll analyze regional beer preferences, comparing neighboring states and even the way different beer styles shape the ratings by state. Join us as we sift through the data to uncover hidden trends and discover the reasons behind these regional biases. Could the answers be hiding in plain sight? Let’s investigate and find out.
+Our question at hand: Do reviewers have a positive bias for beers coming from their own state? To crack the case, we’ll begin by examining beer preferences throughout the U.S. Inspired by the idea that people from neighbouring regions of the world share similar food tastes, we’ll analyze regional beer preferences, comparing neighbouring states and even the way different beer styles shape the ratings by state. Join us as we sift through the data to uncover hidden trends and discover the reasons behind these regional biases. Could the answers be hiding in plain sight? Let’s investigate and find out.
 
-# The Data Used
+# What to choose, where to look?
 
 <div style="display: flex; align-items: center;">
 
@@ -67,7 +65,7 @@ Our question at hand: Do people from different states have a bias for their own 
 <div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
-      Why did we analyse US states you may ask. We had access to a large dataset from both the BeerAdvocate and RateBeer websites, but as we began our investigation, we found it more than sufficient to focus on the BeerAdvocate data. BeerAdvocate had a higher percentage of U.S.-based users compared to RateBeer, making it a more suitable dataset for our analysis, which was focused on a well-defined geographical region—the United States. <br>
+      Why did we analyse US states you may ask. We had access to a large dataset from both the Why did we analyse only the U.S. you may ask. A good detective knows what to look at and what to isolate in a sea of information. We had access to a large dataset from both the BeerAdvocate and RateBeer websites, but as we began our investigation, we found it more than sufficient to focus on the BeerAdvocate data. BeerAdvocate had a higher percentage of U.S.-based users compared to RateBeer, making it a more suitable dataset for our analysis, which was focused on a well-defined geographical region—the United States. Our focal lens is getting smaller… <br>
       As seen in the graph below, U.S. states have not only a larger quantity of users, but also a greater number of local and non-local reviews, as well as more beers produced within each region. Here, we defined "local reviews" as those where the user’s region matched the beer’s region of origin.
     </p>
   </div>
@@ -84,7 +82,7 @@ Our question at hand: Do people from different states have a bias for their own 
 
 Having more data at our disposal allowed us to minimize the impact of anomalies or outliers. Since our goal was to capture state-level trends in beer reviews, the increased number of reviews enabled us to shift focus away from individual reviewer opinions and instead analyze the broader geographical patterns.
 
-# 1) Do regions like the same kind of beer?
+# Do neighbours share a taste for beer?
 
 <div style="display: flex; align-items: center;">
 
@@ -99,8 +97,9 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 <div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
-      Not all states see eye to eye. Whether it's their neighbors or states on the opposite coast, preferences diverge in subtle but telling ways. So we asked ourselves, do neighbouring states rate their local beers similarly? <br>
-      While we are interested in seeing how well states get along on beer taste, we start by dividing into "bubbles". A bubble is defined as a state and all its immediate neighbors. We're examining how the beer ratings within these bubbles might reveal patterns of connection (or lack thereof) between states.
+      Not all states see eye to eye. Whether it's their neighbours or states on the opposite coast, preferences diverge in subtle but telling ways. So we asked ourselves, do neighbouring states rate their local beers similarly? <br>
+      While we are interested in seeing how well states get along on beer taste, we’ll start by dividing the U.S. into "bubbles". A bubble is simply defined as a central state and all its immediate neighbours. So there are 50 bubbles, one for each state. We're trying to see if the way users rate beers within their bubbles could reveal patterns and connections (or a lack thereof) between neighbouring states.
+
 
     `</p>`
 
@@ -108,7 +107,7 @@ Having more data at our disposal allowed us to minimize the impact of anomalies 
 
 </div>
 
-To find our answer, we focus on Cohen's d value, which tells us whether the difference in rating tendencies are statistically significant or not. Let us therefore regroup the states that align in their ratings.
+To find our answer, we’re using statistical significance tests (Cohen’s D), a powerful tool to analyze differences between distributions. More specifically, we are looking at the differences in the distributions of average ratings of beers for the states in a bubble. By grouping many bubbles together based on their statistical similarities, we can put states that have similar beer preferences together to customize new regions and draw a nice map based on these groups.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question1/custom_region.html" 
@@ -132,15 +131,13 @@ To find our answer, we focus on Cohen's d value, which tells us whether the diff
 <div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
-      The results are varied: proximity doesn’t always equate to similarity in ratings. States like Maryland, nestled on the East Coast, show a striking alignment in their beer reviews with nearby states. But Louisiana, sitting comfortably in the heart of the South, reveals a surprising connection to California, far from its borders, rather than to neighboring Mississippi. On the other hand it is Mississippi, who ever agrees with them?
+      The results are varied: proximity doesn’t always equate to similarity in ratings. States like Maryland, nestled on the East Coast, show a striking alignment in their beer reviews with nearby states. But Louisiana, sitting comfortably in the heart of the South, reveals a surprising connection to California, far from its borders, rather than to neighboring Mississippi. So there’s something more to simply being neighbours that influences a user's beer preferences. We are not giving up so easily, the search must go on!
     </p>
   </div>
 
 </div>
 
-This being said, we have looked if there was statistical significance between the ratings between each bubble. We are not giving up nonetheless, the search must go on!
-
-# 2) Do we see significant differences between regions when comparing beer ratings?
+# Bubble vs. Bubble, Customized Region vs Customized Region, are they really different?
 
 <div style="display: flex; align-items: center;">
 
@@ -149,7 +146,7 @@ This being said, we have looked if there was statistical significance between th
 <div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
-      Hmm. How interesting! To further deepen our investigation we extended our analysis to compare beer ratings between regions. Here we are interested in detecting significant differences in how users from a state rate their beers brewed in their own state compared to out of state beers. To do so, we looked at 2 different regions for comparison.
+      In the same way draft beer pours into our glasses on a Friday night, let’s pour ourselves into this investigation. So far we’ve compared states within a bubble to each other and were able to customize new regions, but to deepen our investigation we can look at both how bubbles and our customized regions themselves compare to the others. Maybe by taking a bigger picture view of things, we can find some interesting results. Should this be true, it would be a small breakthrough, a step towards identifying regional bias.
     </p>
   </div>
 
@@ -161,9 +158,9 @@ This being said, we have looked if there was statistical significance between th
 
 </div>
 
-## Neighboring bubbles analysis
+## Neighboring Bubbles Analysis
 
-We first examined whether users in each neighboring  bubble showed preferences for beers in their bubble compared to outside. However, all Cohen’s D were below 0.2, meaning there was no statistically significant difference between the ratings.
+The graph below is showing us differences in beer ratings between bubbles. If we get a Cohen’s D above 0.2 we can say that it is statistically significant, however, none of the bubbles attain the 0.2 threshold. Our lead is a dead end, maybe finer details are being lost as we’re averaging over a whole bubble? 
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question2/neighbours_regions_cohend.html" 
@@ -174,9 +171,27 @@ We first examined whether users in each neighboring  bubble showed preferences f
     </iframe>
 </div>
 
-## Custom region analysis
+## Customized Region Analysis
 
-Next, we analyzed the regions we constructed earlier based on insights from the neighboring regions analysis of part 1 to see if we can see more trends. For these custom clusters, we compared in-region and out-region ratings using Cohen’s D. Again, all Cohen’s D values remained below 0.2, confirming that users did not rate beers from their own regions significantly higher.
+<div style="display: flex; align-items: center;">
+
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
+    <h2></h2>
+    <p>
+      Now let’s look at our customized regions and see if by comparing them we see any differences. Since they are grouped based on preference, different groups might be quite different in terms of taste. <br>
+      Will they show us a bias in the ratings or is everyone just a fair player in the beer rating business?
+    </p>
+  </div>
+
+<!-- Image on the right -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question2/image_fun_q2_2.jpg" alt="Description de l'image" style="max-width: 100%; height: 400px;">
+  </div>
+
+</div>
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question2/regional_on_question1.html" 
@@ -187,7 +202,9 @@ Next, we analyzed the regions we constructed earlier based on insights from the 
     </iframe>
 </div>
 
-# 3) Looking at the state level, do we see more trends ? By doing a sentiment analysis do the text reviews reveal similar trends ?
+Well… The latter appears to have prevailed once again. No group has shown a significant bias towards their own group.  Does this mean that all users have the same tendencies when it comes to reviewing beers from different states? We must dig deeper.
+
+# Zooming In: State-Level Bias
 
 ## Ratings analysis
 
