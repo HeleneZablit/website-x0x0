@@ -22,7 +22,7 @@ baseurl: "/website-x0x0"
 ###############################################
 
 navbar-links:
-  About the team: "aboutme"
+  About us: "aboutme"
   Github: "https://github.com/HeleneZablit/website-x0x0"
 
 ################

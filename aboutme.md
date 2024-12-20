@@ -1,12 +1,12 @@
 ---
 layout: page
-title: About the team
-subtitle: What you need to know about us
+title: About Us
+subtitle: Get to Know Our Team
 ---
 
-Hi! Welcome to our website!
+Welcome to our website
 
-We are the 5 students who conducted the project:
+Meet the team behind the project :
 
 | Name                    | Email                                           |
 |-------------------------|-------------------------------------------------|
@@ -16,6 +16,6 @@ We are the 5 students who conducted the project:
 | Thomas van Spaendonk    | [thomas.vanspaendonk@epfl.ch](mailto:thomas.vanspaendonk@epfl.ch)|
 | Hélène Zablit           | [helene.zablit@epfl.ch](mailto:helene.zablit@epfl.ch)          |
 
-Our project is part of the 2024 edition of the Applied Data Analysis ([CS-401](https://epfl-ada.github.io/teaching/fall2024/cs401/)) class at EPFL.
+This project is part of the EPFL Applied Data Analysis course ([CS-401](https://epfl-ada.github.io/teaching/fall2024/cs401/)).
 
-Check out our project on [GitHub](https://github.com/epfl-ada/ada-2024-project-x0x0).
+Explore our work on [GitHub](https://github.com/epfl-ada/ada-2024-project-x0x0).
