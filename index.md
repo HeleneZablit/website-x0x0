@@ -137,7 +137,7 @@ To find our answer, we are using statistical significance tests (Cohen’s D), a
 
 </div>
 
-# Bubble vs bubble, foam vs foam: are they really different?
+# Bubble vs Bubble, Foam vs Foam : are they really different?
 
 <div style="display: flex; align-items: center;">
 
@@ -235,7 +235,24 @@ Aha! This finer lens finally reveals a lead, indeed we can see some differences 
 
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/ratings_distributions_average_ratings_high_cohensd.png)
 
-Looking at the actual difference in average rating, in red we can see that most states do indeed have a bias in their beers compared to when rating out of state beers. For more than 50% of the states, this bias is positively weighted towards their own beers. However in a turn of events there are 17 states where there is actually a preference for out of state beers. We have to reap the fruits our lead gave us, and dig deeper into what drives these differences. What is the secret behind Missouri beer, which has its inhabitants in a chokehold?
+<div style="display: flex; align-items: center;">
+
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
+    <h2></h2>
+    <p>
+      Looking at the actual difference in average rating, in red we can see that most states do indeed have a bias in their beers compared to when rating out of state beers. For more than 50% of the states, this bias is positively weighted towards their own beers. However in a turn of events there are 17 states where there is actually a preference for out of state beers. We have to reap the fruits our lead gave us, and dig deeper into what drives these differences. What is the secret behind Missouri beer, which has its inhabitants in a chokehold?
+    </p>
+  </div>
+
+<!-- Image on the right -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question3/image_fun_2_q3.jpg" alt="Description de l'image" style="max-width: 100%; height: 300px;">
+  </div>
+
+</div>
 
 ## Sentiment analysis : A Textual Clue?
 
@@ -259,9 +276,73 @@ Let's expand our search a little and investigate the other factors at play, nota
 
 # A style specific bias?
 
+<div style="display: flex; align-items: center;">
+
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question4/image_fun_q4.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
+  </div>
+
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
+    <h2></h2>
+    <p>
+      The analysis of state based style groupings began with a straightforward approach—analyzing beer style ratings to determine regional preferences across states. Yet, as we dug deeper and examined the number of reviews per style in each state, a pattern emerged: three styles were consistently the most reviewed across the country; the American IPA, Imperial IPA and Imperial Stout. This prevalence could be masking potential state-level trends that might otherwise have been visible. Looking solely at the average ratings didn’t reveal any significant regional preferences, prompting us to investigate further by introducing additional parameters.
+    </p>
+  </div>
+
+</div>
+
+
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/top_beer_style_high_norm_weight_per_state.png)
 
+<div style="display: flex; align-items: center;">
+
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
+    <h2></h2>
+    <p>
+      Even after applying various techniques to weigh ratings against the volume of reviews, and delving beyond just the top-ranked style, we still were unable to uncover substantial differences in beer preferences across states. <br>
+      The percentage distribution of beer styles reviewed by state also revealed that the percentage shares for the most common beer styles were quite similar for all states and it was difficult to come up with specific groupings by style and state. 
+
+    </p>
+  </div>
+
+<!-- Image on the right -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question4/image_fun_q4_2.jpg" alt="Description de l'image" style="max-width: 100%; height: 300px;">
+  </div>
+
+</div>
+
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/percentage_share_beer_styles_by_users.png)
+
+<div style="display: flex; align-items: center;">
+
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question4/image_fun_q4_3.jpg"  alt="Description de l'image" style="max-width: 100%; height: 200px;">
+  </div>
+
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
+    <h2></h2>
+    <p>
+      This prompted us to explore clustering as a way to reveal which states were most similar to each other. Using features based on beer style—such as ratings, aroma, appearance, palate, and taste we are able to create a more complete picture of our data.
+    </p>
+  </div>
+
+</div>
+
+## Clustering on Style
+
+Using UMAP to reduce our features into 3 dimensions and DBSCAN to cluster our states revealed distinct clusters.
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question4/dbscan_clustering_on_umap.html" 
@@ -272,6 +353,8 @@ Let's expand our search a little and investigate the other factors at play, nota
     </iframe>
 </div>
 
+Then as we’ve done before we can use these clusters to build a map of the US, maybe this time we’ll see some geographical biases.
+
 <div style="display: flex; justify-content: center; margin: 20px 0;">
     <iframe src="{{ site.baseurl }}/assets/img/question4/usa_state_cluster_based_on_dbscan.html" 
             width="1000" 
@@ -279,6 +362,27 @@ Let's expand our search a little and investigate the other factors at play, nota
             style="border: none;" 
             title="Interactive Plot: Regional Analysis">
     </iframe>
+</div>
+
+<div style="display: flex; align-items: center;">
+
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question4/image_fun_q4_4.jpg"  alt="Description de l'image" style="max-width: 100%; height: 300px;">
+  </div>
+
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
+    <h2></h2>
+    <p>
+      It’s interesting to see that although these clusters are quite clearly defined, geographically they do not seem to be grouped together in an intuitive way. However, notably the largest grouping seems to encapsulate western and midwestern states. We'll analyse the results of this map together with the other maps in a later part. <br>
+      So far we’ve found some interesting results,but maybe we’re going about it the wrong way, what if we look at it from the opposite direction, what if we instead cluster beers by their attributes and ratings, and see if we can recover regional biases that way?
+
+    </p>
+  </div>
+
 </div>
 
 # 5) Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias ?
