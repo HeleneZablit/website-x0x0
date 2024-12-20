@@ -131,7 +131,7 @@ To find our answer, we are using statistical significance tests (Cohen’s D), a
 <div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
-      The results are varied: proximity doesn’t always equate to similarity in ratings. States like Maryland, nestled on the East Coast, show a striking alignment in their beer reviews with nearby states. But Louisiana, sitting comfortably in the heart of the South, reveals a surprising connection to California, far from its borders, rather than to neighboring Mississippi. So there’s something more to simply being neighbours that influences a user's beer preferences. We are not giving up so easily, the search must go on!
+      The results are varied: proximity doesn’t always equate to similarity in ratings. States like Maryland, nestled on the East Coast, show a striking alignment in their beer reviews with nearby states. But Louisiana, sitting comfortably in the heart of the South, reveals a surprising connection to California, far from its borders, rather than to neighbouring Mississippi. So there’s something more to simply being neighbours that influences a user's beer preferences. We are not giving up so easily, the search must go on!
     </p>
   </div>
 
@@ -158,7 +158,7 @@ To find our answer, we are using statistical significance tests (Cohen’s D), a
 
 </div>
 
-## Neighboring Bubbles Analysis
+## Neighbouring Bubbles Analysis
 
 The graph below is showing us differences in beer ratings between bubbles. If we get a Cohen’s D above 0.2 we can say that it is statistically significant, however, none of the bubbles attain the 0.2 threshold. Our lead is a dead end, maybe finer details are being lost as we’re averaging over a whole bubble? 
 
@@ -229,6 +229,9 @@ Since we don’t see much on a big scale, let's try a more granular approach and
 
 ## Ratings analysis
 
+
+By comparing the ratings given by users from a state for beers in state compared to out of state, we can locate states in which users are guilty of giving positively biased reviews towards their own beers.
+
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question3/cohensd_in_state_vs_out_state.png)
 
 Aha! This finer lens finally reveals a lead, indeed we can see some differences between states! There are multiple states with significant Cohen's D. This means that states do have preferences in their taste of beer.
@@ -242,7 +245,7 @@ Aha! This finer lens finally reveals a lead, indeed we can see some differences 
 <div style="flex: 2; padding-right: 20px;">
     <h2></h2>
     <p>
-      Looking at the actual difference in average rating, in red we can see that most states do indeed have a bias in their beers compared to when rating out of state beers. For more than 50% of the states, this bias is positively weighted towards their own beers. However in a turn of events there are 17 states where there is actually a preference for out of state beers. We have to reap the fruits our lead gave us, and dig deeper into what drives these differences. What is the secret behind Missouri beer, which has its inhabitants in a chokehold?
+      Looking at the actual difference in average rating, in red we can see that most states do indeed have a bias in their beers compared to when rating out of state beers. For more than 50% of the states, this bias is positively weighted towards their own beers. However in a turn of events there are 17 states where there is actually a preference for out of state beers.  By far, Missourians are guilty of rating their own beers more positively than beers from elsewhere in the US, are they the most loyal to their local beers? We have to reap the fruits our lead gave us, and dig deeper into what drives these differences. What is the secret behind Missouri beer, which has its inhabitants in a chokehold?
     </p>
   </div>
 
@@ -295,7 +298,6 @@ Let's expand our search a little and investigate the other factors at play, nota
 
 </div>
 
-
 ![Mon image descriptive]({{ site.baseurl }}/assets/img/question4/top_beer_style_high_norm_weight_per_state.png)
 
 <div style="display: flex; align-items: center;">
@@ -334,13 +336,12 @@ Let's expand our search a little and investigate the other factors at play, nota
 <div style="flex: 2; padding-left: 20px;">
     <h2></h2>
     <p>
-      This prompted us to explore clustering as a way to reveal which states were most similar to each other. Using features based on beer style—such as ratings, aroma, appearance, palate, and taste we are able to create a more complete picture of our data.
+      <b>Clustering on Style</b> <br>
+      This prompted us to explore clustering as a way to reveal which states were most similar to each other. Using features based on beer style—such as ratings, aroma, appearance, palate, and taste we are able to create a more complete picture of our data by considering more parameters than simply the average rating for each style.
     </p>
   </div>
 
 </div>
-
-## Clustering on Style
 
 Using UMAP to reduce our features into 3 dimensions and DBSCAN to cluster our states revealed distinct clusters.
 
@@ -385,11 +386,29 @@ Then as we’ve done before we can use these clusters to build a map of the US, 
 
 </div>
 
-# 5) Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias ?
+# Clustering: Finding Patterns in the Foam
 
+<div style="display: flex; align-items: center;">
+
+<!-- Text on the left -->
+
+<div style="flex: 2; padding-right: 20px;">
+    <h2></h2>
+    <p>
+      We embarked on a quest to uncover the hidden patterns behind beer attributes – the different parameters that breweries modify slightly to make their beer different from the others. Our investigation focused on clustering these attributes to reveal the geographical distribution of reviewers within each cluster. This would indicate that the geographical bias is ingrained in the beer attributes, given that there is no geographical information in the features we are training the algorithm on. The clues emerged through clustering, with the optimal parameters for k means pointing us to k = 5 or k = 6.
+    </p>
+  </div>
+
+<!-- Image on the right -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/question5/image_fun_q5.jpg" alt="Description de l'image" style="max-width: 100%; height: 300px;">
+  </div>
+
+</div>
 
 <div class="control-container">
-  <label for="k-slider">Or use the slider:</label>
+  <label for="k-slider">Use the slider:</label>
   <input id="k-slider" type="range" min="3" max="10" value="3" step="1">
   <span id="k-slider-value">3</span>
 </div>
@@ -419,3 +438,40 @@ Then as we’ve done before we can use these clusters to build a map of the US, 
     updateIframe(k);
   });
 </script>
+
+The clustering showed us the preferences people have are geographically biased: those who like the same things, often, are neighbours!  Additionally we can see that there are certain regions that always belong to the same cluster. Namely: Maine, New York, Pennsylvania and Virginia often belong to the same cluster. South Carolina, Georgia Mississippi, Tennessee, Arkansas and Arizona group together. Minnesota, Wisconsin, Illinois, Iowa and Michigan also cluster together. And finally, Montana, North and South Dakota, Wyoming and Idaho often belong to the same cluster.
+
+From this modest clustering, we can say that there are 4 regions that are recurrent in this case:<br>
+1) New England and the Mid-Atlantic <br>
+2) Southeast and South central <br>
+3) The Midwest <br>
+4) Mountain States <br>
+
+Now let us compare the results of this clustering with all the other maps we’ve made, maybe there are some similarities between them?
+
+# Comparing clustering, are the different maps we’ve made similar to each other?
+
+The mystery deepens as we lay out the US maps generated by our different region-grouping methods. From crafting “custom regions” using Cohen’s D to running two distinct clustering analyses with a variety of beer parameters, the story unfolds in unexpected ways. Each method paints a different picture, with groupings shifting depending on the tools and criteria used—suggesting that clear geographical divides in beer preferences might be more difficult to define than expected. <br>
+
+Yet, the East Coast emerges as a repeat offender, with certain states consistently sticking together across all clustering methods. Could their distinct beer preferences be the clue that sets them apart? When we look at our style-based clusters we get larger clusters indicating that many states share the same beer style preferences, making it harder to tease apart state-specific preferences. This is especially evident in the large grouping of the central states which are part of cluster 0, which is not present when using our other clustering methods.
+
+# So does your State *really* Sway Your Sip?
+
+<div style="display: flex; align-items: center;">
+
+<!-- Image on the left -->
+
+<div style="flex: 1; text-align: center;">
+    <img src="{{ site.baseurl }}/assets/img/image_conclusion.jpg"  alt="Description de l'image" style="max-width: 100%; height: 600px;">
+  </div>
+
+<!-- Text on the right -->
+
+<div style="flex: 2; padding-left: 20px;">
+    <h2></h2>
+    <p>
+      After having pieced together all our clues and leads, we have uncovered some intriguing patterns in beer preferences. States with similar beer tastes often clustered geographically, perhaps hinting at regional influence. However, when comparing ratings between different bubbles, the differences proved insignificant. Interestingly enough, when we focussed our investigation. Over half the states were guilty in showing a clear bias towards favouring their own beers, while a strange twist of events, 17 states showed biased ratings against their own beers to favour out of state beers. In the style analysis, the clustering based on beer style parameters did allow us to group the states by preferences but its variation in states grouped together compared to the clustering of reviews by different beer parameters suggests that trying to define a state simply by its beer preferences is a complex case. Overall, the differences in beer preferences by state weren’t as pronounced as expected and that your state isn’t swaying your sip as much as we initially expected. Perhaps a broader analysis on country wide differences would allow us to see; does your Passport Pick your Pint?
+    </p>
+  </div>
+
+</div>
